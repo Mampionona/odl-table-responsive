@@ -21,6 +21,6 @@ makeTableResponsive(element, {
 ## Démo
 Ouvrez le fichier **index.html** pour afficher le démo.
 
-![image](desktop.jpg)
+![image](https://raw.githubusercontent.com/Mampionona/odl-table-responsive/dev/desktop.jpg)
 
-![image](small.jpg)
+![image](https://raw.githubusercontent.com/Mampionona/odl-table-responsive/dev/small.jpg)
