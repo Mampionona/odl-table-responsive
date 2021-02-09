@@ -13,7 +13,7 @@ makeTableResponsive(element, {
 
 
 ## Options
-**element**: _.classe_ ou _#ID_ du tableau.\
+**element**: _.classe_ ou _#id_ du tableau.\
 **columns**: _Array_, citer les noms des colonnes.\
 **breakpoint**: _integer_, activer la responsive à une largeur d'écran donnée.\
 **onResized**: _Function_, executé lorsque la fenêtre a été redimensionnée.
