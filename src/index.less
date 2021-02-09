@@ -1,3 +1,52 @@
-.odl-table-responsive {
+table {
+  border-collapse: collapse;
+  font-family: sans-serif;
   width: 100%;
+
+  tr {
+    th,
+    td {
+      border: 1px solid #aaa;
+      padding: 5px;
+      text-align: left;
+    }
+
+    td {
+      .column-name {
+        display: none;
+        font-weight: bold;
+        // width: 160px;
+        margin-right: 4px;
+
+        &::after {
+          content: " :";
+        }
+      }
+    }
+
+    @media (max-width: 991px) {
+      border: 1px solid #aaa;
+
+      th {
+        display: none;
+      }
+
+      td {
+        border: 0;
+        display: block;
+
+        .column-name {
+          display: inline-block;
+        }
+
+        + td {
+          border-top: 0;
+        }
+      }
+    }
+
+    &:nth-child(odd):not(:only-child) {
+      background-color: rgba(black, 0.1);
+    }
+  }
 }
