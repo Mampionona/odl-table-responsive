@@ -15,7 +15,5 @@
     "gulp-clean": "^0.4.0",
     "gulp-less": "^4.0.1"
   },
-  "repository": {
-    "homepage": "https://github.com/Mampionona/odl-table-responsive"
-  }
+  "repository": "https://github.com/Mampionona/odl-table-responsive"
 }
