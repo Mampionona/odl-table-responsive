@@ -16,3 +16,6 @@ makeTableResponsive(element, {
 **columns**: _Array_, citer les noms des colonnes.\
 **breakpoint**: _integer_, activer la responsive à une largeur d'écran donnée.\
 **onResized**: _Function_, executé lorsque la fenêtre a été redimensionnée.
+
+## Démo
+Ouvrez le fichier **index.html** pour afficher le démo.
