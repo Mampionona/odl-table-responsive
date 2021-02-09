@@ -54,13 +54,13 @@ class Table {
 }
 
 // Init
-new Table({
-	columns: [
-		"ID",
-		"Nom",
-		"Prénom",
-		"Email",
-		"Téléphone"
-	]
-})
-	.render("my-table");
+// new Table({
+// 	columns: [
+// 		"ID",
+// 		"Nom",
+// 		"Prénom",
+// 		"Email",
+// 		"Téléphone"
+// 	]
+// })
+// 	.render("my-table");
