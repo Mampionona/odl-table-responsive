@@ -1,6 +1,6 @@
-Rendre un tableau responsive
+Rendre un tableau responsive.
 
-## Usage
+## Utilisation
 ```JavaScript
 makeTableResponsive(element, {
     columns: ["colonne 1", "colonne 2", ...],
@@ -13,7 +13,7 @@ makeTableResponsive(element, {
 
 
 ## Options
-**element**: _.classe_ ou _#ID_ du tableau\
+**element**: _.classe_ ou _#ID_ du tableau.\
 **columns**: _Array_, citer les noms des colonnes.\
 **breakpoint**: _integer_, activer la responsive à une largeur d'écran donnée.\
 **onResized**: _Function_, executé lorsque la fenêtre a été redimensionnée.
