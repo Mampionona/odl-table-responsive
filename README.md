@@ -1,7 +1,7 @@
-`
+```
 const table = new Table({
-    columns: [array]
+    columns: ["column 1", "column 2", ...]
 })
 
 table.render("your-table-id")
-`
+```
