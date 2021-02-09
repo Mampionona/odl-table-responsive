@@ -5,8 +5,9 @@
   "main": "src/index.less",
   "scripts": {},
   "keywords": [
-    "table",
-    "responsive"
+    "tableau",
+    "responsive",
+    "javascript"
   ],
   "author": "ODL",
   "license": "ISC",
