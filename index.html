@@ -11,11 +11,11 @@
     <table id="my-table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Pr&eacute;nom</th>
-                <th>Email</th>
-                <th>T&eacute;l&eacute;phone</th>
+                <th>colonne 1</th>
+                <th>colonne 2</th>
+                <th>colonne 3</th>
+                <th>colonne 4</th>
+                <th>colonne 5</th>
             </tr>
         </thead>
         <tbody>
@@ -58,5 +58,18 @@
     </table>
 
     <script src="dist/index.js"></script>
+    <script>
+        (function (w) {
+            w.addEventListener("DOMContentLoaded", function () {
+                makeTableResponsive("table", {
+                    columns: ["colonne 1", "colonne 2", "colonne 3", "colonne 4", "colonne 5"],
+                    breakpoint: 991,
+                    onResized: function (table) {
+                        // console.log(table)
+                    }
+                });
+            });
+        }) (window);
+    </script>
 </body>
 </html>

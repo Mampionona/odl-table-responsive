@@ -1,7 +1,5 @@
 const { src, dest, watch, series } = require("gulp");
 const less = require("gulp-less");
-const babel = require("gulp-babel");
-const plumber = require("gulp-plumber");
 const clean = require("gulp-clean");
 
 function cleanTask() {
@@ -19,9 +17,6 @@ function defaultTask(callback) {
 	src(["src/index.js"], {
 		allowEmpty: true
 	})
-		.pipe(babel({
-			presets: ["@babel/env"]
-		}))
 		.pipe(dest("dist"));
 
 	callback();

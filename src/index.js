@@ -1,66 +1,51 @@
-// Polyfill
-(function (arr) {
-	arr.forEach(function (item) {
-		if (item.hasOwnProperty('prepend')) {
-			return;
-		}
-		Object.defineProperty(item, 'prepend', {
-			configurable: true,
-			enumerable: true,
-			writable: true,
-			value: function prepend() {
-				var argArr = Array.prototype.slice.call(arguments),
-					docFrag = document.createDocumentFragment();
+function makeTableResponsive(selector, options) {
+	var d = document;
+	var w = window;
+	var tables = Array.from(d.querySelectorAll(selector));
+	var columns = options.columns || [];
+	var breakpoint = options.breakpoint || null;
 
-				argArr.forEach(function (argItem) {
-					var isNode = argItem instanceof Node;
-					docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
-				});
+	for (var i = 0, length = tables.length; i < length; i++) {
+		var table = tables[i];
+		var tBodies = table.tBodies;
+		var rows = Array.from(tBodies[0].rows);
 
-				this.insertBefore(docFrag, this.firstChild);
-			}
-		});
-	});
-})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+		for (var i$1 = 0, length$1 = rows.length; i$1 < length$1; i$1++) {
+			var row = rows[i$1];
+			var cells = Array.from(row.cells);
 
-class Table {
-	constructor(options) {
-		this.table = null;
-		this.options = options;
-	}
-
-	render(id) {
-		this.table = document.getElementById(id);
-		const tBodies = this.table.tBodies;
-
-		if (!this.table || !tBodies.length) {
-			return;
-		}
-
-		Array.from(tBodies[0].rows).forEach((row) => {
-			Array.from(row.cells).forEach((cell, index) => {
-				const { columns } = this.options;
-				const columnName = document.createElement("span");
+			for (var i$2 = 0, length$2 = cells.length; i$2 < length$2; i$2++) {
+				var cell = cells[i$2];
+				var columnName = d.createElement("span");
 
 				columnName.classList.add("column-name");
 
-				if (columns[index]) {
-					columnName.innerHTML = columns[index];
+				if (columns[i$2]) {
+					columnName.innerHTML = columns[i$2];
 				}
+
 				cell.prepend(columnName);
-			});
+			}
+		}
+
+		initialize();
+
+		w.addEventListener("resize", function () {
+			initialize();
+
+			if (options.onResized) {
+				options.onResized(table);
+			}
 		});
+
+		function initialize() {
+			var width = w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth;
+
+			if (breakpoint && width <= breakpoint) {
+				table.classList.add("responsive--breakpoint");
+			} else {
+				table.classList.remove("responsive--breakpoint");
+			}
+		}
 	}
 }
-
-// Init
-// new Table({
-// 	columns: [
-// 		"ID",
-// 		"Nom",
-// 		"Prénom",
-// 		"Email",
-// 		"Téléphone"
-// 	]
-// })
-// 	.render("my-table");

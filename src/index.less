@@ -15,7 +15,6 @@ table {
       .column-name {
         display: none;
         font-weight: bold;
-        // width: 160px;
         margin-right: 4px;
 
         &::after {
@@ -24,7 +23,13 @@ table {
       }
     }
 
-    @media (max-width: 991px) {
+    &:nth-child(odd):not(:only-child) {
+      background-color: rgba(black, 0.1);
+    }
+  }
+
+  &.responsive--breakpoint {
+    tr {
       border: 1px solid #aaa;
 
       th {
@@ -34,6 +39,7 @@ table {
       td {
         border: 0;
         display: block;
+        width: 100%;
 
         .column-name {
           display: inline-block;
@@ -43,10 +49,6 @@ table {
           border-top: 0;
         }
       }
-    }
-
-    &:nth-child(odd):not(:only-child) {
-      background-color: rgba(black, 0.1);
     }
   }
 }
