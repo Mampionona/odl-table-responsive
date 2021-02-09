@@ -6,7 +6,7 @@ makeTableResponsive(element, {
     columns: ["colonne 1", "colonne 2", ...],
     breakpoint: 991,
     onResized: function (table) {
-        // console.log(table)
+        // console.log(table) // <table>
     }
 });
 ```
