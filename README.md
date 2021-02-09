@@ -20,3 +20,7 @@ makeTableResponsive(element, {
 
 ## Démo
 Ouvrez le fichier **index.html** pour afficher le démo.
+
+![image](desktop.jpg)
+
+![image](small.jpg)
